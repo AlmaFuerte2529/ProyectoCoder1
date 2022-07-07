@@ -15,37 +15,17 @@ def curso(self):
 
 
 def inicio(request):
-    return render (request, "AppCoder/inicio.html")
+    return render(request, "Appcoder/inicio.html")
 
 def cursos(request):
-    return render(request, "AppCoder/cursos.html")
+    return render(request, "Appcoder/cursos.html")
 
 def profesores(request):
-    return render(request, "AppCoder/profesores.html")
+    return render(request, "Appcoder/profesores.html")
 
 def estudiantes(request):
-    return render(request, "AppCoder/estudiantes.html")
+    return render(request, "Appcoder/estudiantes.html")
 
 def entregables(request):
-    return render(request, "AppCoder/entregables.html")
+    return render(request, "Appcoder/entregables.html")
 
-
-
-
-'''
-def inicio(request):
-    return render (request, "Appcoder/inicio.html")
-
-def cursos(request):
-    return render (request, "Appcoder/cursos.html")
-
-def profesores(request):
-    return render (request, "Appcoder/profesores.html")
-
-def estudiantes(request):
-    return render (request, "Appcoder/estudiantes.html")
-
-def entregables(request):
-    return render (request, "Appcoder/entregables.html")
-
-'''
