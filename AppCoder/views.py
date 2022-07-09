@@ -29,3 +29,6 @@ def estudiantes(request):
 def entregables(request):
     return render(request, "Appcoder/entregables.html")
 
+def cursoFormulario(request):
+    return render(request, "Appcoder/cursoFormuklario.html")
+
