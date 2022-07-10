@@ -39,5 +39,5 @@ def cursoFormulario(request):
         curso.save()
         return render (request, "AppCoder/inicio.html")
 
-    return render(request, "Appcoder/cursoFormulario.html")
+    return render(request, "AppCoder/cursoFormulario.html")
 
