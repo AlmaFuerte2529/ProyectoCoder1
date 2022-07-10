@@ -31,10 +31,11 @@ def entregables(request):
 
 def cursoFormulario(request):
 
-    if (request.method== "POST"):
+    if (request.method=="POST"):
+
         nombre= request.POST.get("curso")
         comision= request.POST.get("comision")
-        curso= Curso(nombre=curso, comision=comision)
+        curso= Curso(nombre=nombre, comision=comision)
         curso.save()
         return render (request, "AppCoder/inicio.html")
 
