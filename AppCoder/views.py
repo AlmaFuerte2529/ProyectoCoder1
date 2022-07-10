@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.http.request import QueryDict
+from django.shortcuts import render, HttpResponse
 from AppCoder.models import Curso
 from django.http import HttpResponse
 
