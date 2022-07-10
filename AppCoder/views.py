@@ -37,7 +37,7 @@ def cursoFormulario(request):
         comision= request.POST.get("comision")
         curso= Curso(nombre=nombre, comision=comision)
         curso.save()
-        return render (request, "AppCoder/inicio.html")
+        return render (request, "Appcoder/inicio.html")
 
-    return render(request, "AppCoder/cursoFormulario.html")
+    return render(request, "Appcoder/cursoFormulario.html")
 
