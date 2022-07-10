@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/cursoFormulario" method="POST">
-        <p>Curso: <imput type="text" nome="curso"></p>
-        <p>Comision: <imput type="text" nome="comision"></p>
+    <form action="/AppCoder/cursoFormulario/" method="POST"> {% csrf_token %}
+
+        <p>Curso: <input type="text" nome="curso"></p>
+        <p>Comision: <input type="number" nome="comision"></p>
        
         <!--- -->
-        <imput type="submit" value="Enviar">
+        <input type="submit" value="Enviar">
             
 </body>
