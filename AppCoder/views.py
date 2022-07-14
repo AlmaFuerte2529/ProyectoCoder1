@@ -78,6 +78,33 @@ def buscar(request):
     else:
         return render(request, "Appcoder/busquedaComision.html", {"error":"No se ingreso ninguna comision"})
 
+def leerprofesores(request):
+    profesores= Profesor.objects.all()
+    return render(request, "Appcoder/leerprofesores.html", {"profesores":profesores})
+
+def eliminarProfesor(request, nombre_profesor):
+    profe= Profesor.objects.get(nombre=nombre_profesor)
+    profe.delete()
+    profesores= Profesor.objects.all()
+    return render(request, "Appcoder/leerprofesores.html", {"profesores":profesores})
+
+def editarProfesor(request, nombre_profesor):
+    profe= Profesor.objects.get(nombre=nombre_profesor)
+    if request.method=="POST":
+        form= ProfeForm(request.POST)
+        if form.is_valid():
+            info= form.cleaned_data
+            profe.nombre= info["nombre"]
+            profe.apellido= info["apellido"]
+            profe.email= info["email"]
+            profe.profesion= info["profesion"]
+            profe.save()
+            return render(request, "Appcoder/inicio.html")
+    else:
+        form= ProfeForm(initial={"nombre":profe.nombre, "apellido":profe.apellido, "email":profe.email, "profesion":profe.profesion})
+    return render(request, "Appcoder/editarProfesor.html", {"formulario":form, "nombre_profesor":nombre_profesor})
+
+
 
 
     #respuesta= f"estoy buscando la comision : {comision}"
